@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnapsackProblem", "Knapsack
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KMP", "KMP\KMP.csproj", "{850B080C-DC81-48C7-BD96-18BE2A543E86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greedy", "Greedy\Greedy.csproj", "{9CADBD3C-1E7E-492F-A7D7-055712BDEE49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greedy", "Greedy\Greedy.csproj", "{9CADBD3C-1E7E-492F-A7D7-055712BDEE49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimMinimumSpanningTree", "PrimMinimumSpanningTree\PrimMinimumSpanningTree.csproj", "{05EA1304-708C-486E-AE21-A48CFA936CD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{9CADBD3C-1E7E-492F-A7D7-055712BDEE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CADBD3C-1E7E-492F-A7D7-055712BDEE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CADBD3C-1E7E-492F-A7D7-055712BDEE49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EA1304-708C-486E-AE21-A48CFA936CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EA1304-708C-486E-AE21-A48CFA936CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EA1304-708C-486E-AE21-A48CFA936CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EA1304-708C-486E-AE21-A48CFA936CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
