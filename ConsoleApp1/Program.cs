@@ -41,9 +41,9 @@ namespace ConsoleApp1
             //            {
             //                list.Add("000");
             //                break;
-                            
+
             //            }
-            //        }
+            //        }fengxueyan_99
 
             //        if (!list.Contains(lines[i]))
             //        {
@@ -52,8 +52,8 @@ namespace ConsoleApp1
             //    }
             //}
 
-            
-            
+
+
 
             StringBuilder sb = new StringBuilder();
             StringBuilder sbr = new StringBuilder();
