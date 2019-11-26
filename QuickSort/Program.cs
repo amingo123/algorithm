@@ -7,6 +7,7 @@ namespace QuickSort
         static void Main(string[] args)
         {
             int[] a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 2, 2, 4, 5, 4, 2 };
+            a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6 };
             QuickSort(a,0,a.Length -1);
             Console.WriteLine(string.Join(',', a));
             Console.ReadLine();
@@ -26,13 +27,13 @@ namespace QuickSort
             int l = left, r = right;
             while (l < r)
             {
-                while (a[l] <= pivot && l < r)
+                while (a[l] < pivot && l < r)
                 {
                     l++;
                 }
                 a[r] = a[l];
 
-                while (a[r] >= pivot && l < r)
+                while (a[r] > pivot && l < r)
                 {
                     r--;
                 }
