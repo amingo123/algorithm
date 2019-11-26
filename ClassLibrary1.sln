@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dijkstra", "Dijkstra\Dijkst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floyd", "Floyd\Floyd.csproj", "{AC967A98-E9ED-4B0E-96BF-35A799311675}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseChessBoard", "HorseChessBoard\HorseChessBoard.csproj", "{A9B032BE-908E-4199-A2A0-04541E03B3EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,10 @@ Global
 		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
