@@ -6,7 +6,7 @@ namespace InsertSort
     {
         static void Main(string[] args)
         {
-            int[] a = new int[] { 9,1,8,2,7,3,6,4,5};
+            int[] a = new int[] { 999, 8, 9, 1, 7, 2, 3, 5, 4, 6, 0, 2, 4, 5, 4, 2 };
             InsertSort(a);
             Console.WriteLine(string.Join(',', a));
             Console.ReadLine();
