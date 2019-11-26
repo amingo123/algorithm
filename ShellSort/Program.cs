@@ -55,7 +55,7 @@ namespace ShellSort
             {
                 gap = Convert.ToInt32(Math.Ceiling((double)gap / 2));
 
-                for (int i = length -1; i >=gap; i--)
+                for (int i = length - 1; i >= gap; i--) //分组之后，不同组中相同的数的相对位置可能发生改变，因此为不稳定的排序 
                 {
                     index = i;
                     value = a[i];
