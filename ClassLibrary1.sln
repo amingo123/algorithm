@@ -55,7 +55,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimMinimumSpanningTree", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KruskalMinimumSpanningTree", "KruskalMinimumSpanningTree\KruskalMinimumSpanningTree.csproj", "{E6E85352-6950-4A26-A660-0AB75CF7D0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{FF1370AC-735A-4A7E-8B6C-BD655098D16A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{FF1370AC-735A-4A7E-8B6C-BD655098D16A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floyd", "Floyd\Floyd.csproj", "{AC967A98-E9ED-4B0E-96BF-35A799311675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +173,10 @@ Global
 		{FF1370AC-735A-4A7E-8B6C-BD655098D16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF1370AC-735A-4A7E-8B6C-BD655098D16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF1370AC-735A-4A7E-8B6C-BD655098D16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC967A98-E9ED-4B0E-96BF-35A799311675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
