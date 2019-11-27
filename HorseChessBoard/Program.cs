@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Utility;
 
 namespace HorseChessBoard
 {
@@ -11,21 +12,21 @@ namespace HorseChessBoard
         static bool Finished;
         static void Main(string[] args)
         {
-            X = 6;
-            Y = 6;
+            X = 8;
+            Y = 8;
             int[,] board = new int[X, Y];
             Visited = new bool[X * Y];
             HorseChessBoard(board, 0, 0, 1);
+            ArrayHelper.Show(board);
             Console.Read();
         }
 
         static void HorseChessBoard(int[,] board, int row, int column, int step)
         {
-            if (Finished) return;
-
             board[row,column] = step;
             Visited[row * X + column] = true;
             List<Point> points = Next(new Point(row, column));
+            Sort(points);
             while (points.Count > 0)
             {
                 Point p = points[0];
@@ -90,6 +91,27 @@ namespace HorseChessBoard
                 list.Add(new Point(p.X - 2, p.Y + 1));
             }
             return list;
+        }
+
+        static void Sort(List<Point> points)
+        {
+            points.Sort((x,y) => 
+            {
+                int count1 = Next(x).Count;
+                int count2 = Next(y).Count;
+                if (count1 < count2)
+                {
+                    return -1;
+                }
+                else if (count1 == count2)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            });
         }
     }
 }

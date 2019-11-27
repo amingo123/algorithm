@@ -57,9 +57,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KruskalMinimumSpanningTree"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{FF1370AC-735A-4A7E-8B6C-BD655098D16A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floyd", "Floyd\Floyd.csproj", "{AC967A98-E9ED-4B0E-96BF-35A799311675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Floyd", "Floyd\Floyd.csproj", "{AC967A98-E9ED-4B0E-96BF-35A799311675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseChessBoard", "HorseChessBoard\HorseChessBoard.csproj", "{A9B032BE-908E-4199-A2A0-04541E03B3EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorseChessBoard", "HorseChessBoard\HorseChessBoard.csproj", "{A9B032BE-908E-4199-A2A0-04541E03B3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +185,10 @@ Global
 		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9B032BE-908E-4199-A2A0-04541E03B3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
