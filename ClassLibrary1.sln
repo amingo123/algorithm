@@ -61,7 +61,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Floyd", "Floyd\Floyd.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorseChessBoard", "HorseChessBoard\HorseChessBoard.csproj", "{A9B032BE-908E-4199-A2A0-04541E03B3EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortParallel", "SortParallel\SortParallel.csproj", "{85092D1E-6BDB-460C-B7C1-06E35820FA8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -189,6 +191,10 @@ Global
 		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23B745C-77D6-4539-A1B2-5DBD90CA1D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85092D1E-6BDB-460C-B7C1-06E35820FA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85092D1E-6BDB-460C-B7C1-06E35820FA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85092D1E-6BDB-460C-B7C1-06E35820FA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85092D1E-6BDB-460C-B7C1-06E35820FA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
