@@ -2,6 +2,9 @@
 
 namespace ShellSort
 {
+    /// <summary>
+    /// 插入排序的改进，希尔排序没有快速排序算法快，希尔算法在最坏的情况下和平均情况下执行效率相差不是很多，与此同时快速排序在最坏的情况下执行的效率会非常差
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
