@@ -7,95 +7,69 @@ namespace ShellSort
         static void Main(string[] args)
         {
             int[] a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 2, 2, 4, 5, 4, 2 };
+            a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
             ShellSort(a);
-            Console.WriteLine(string.Join(',', a));
+            //Console.WriteLine(string.Join(',', a));
             Console.ReadLine();
         }
 
-        //交换法
+        /// <summary>
+        /// 基于交换法法
+        /// </summary>
+        /// <param name="a"></param>
         static void ShellSort(int[] a)
         {
-            if (a.Length <= 1) throw new Exception("invalid a");
-            int gap = a.Length;
-            int value = 0;
-            int index = 0;
-            int length = a.Length;
-            while (true)
+            if (a?.Length < 1) throw new Exception("invalid a");
+            int temp = 0;
+            for (int gap = a.Length / 2; gap > 0; gap /= 2)
             {
-                gap = Convert.ToInt32(Math.Ceiling((double)gap / 2));
-
-                for (int i = 0; i < length; i++)
+                for (int i = gap; i < a.Length; i++)
                 {
-                    index = i + gap;
-                    while (index < length)
+                    //遍历各组中所有的元素(共gap组,每组有个元素)，步长gap
+                    for (int j = i - gap; j >= 0; j -= gap)
                     {
-                        if (a[index] < a[i])
+                        //如果当前元素大于加.上步长后的那个元素，说明交换
+                        if (a[j] > a[j + gap])
                         {
-                            value = a[index];
-                            a[index] = a[i];
-                            a[i] = value;
+                            temp = a[j];
+                            a[j] = a[j + gap];
+                            a[j + gap] = temp;
+                            //Console.WriteLine(gap.ToString() + " -- " + string.Join(',', a) + " -- i = " + i.ToString() + " j = " + j.ToString());
                         }
-                        index = index + gap;
+                        Console.WriteLine(gap.ToString() + " -- i = " + i.ToString() + " j = " + j.ToString());
                     }
                 }
-
-                if (gap == 1) break;
             }
         }
 
-        //基于插入排序
+        /// <summary>
+        /// 基于移动法
+        /// </summary>
+        /// <param name="a"></param>
         static void ShellSort1(int[] a)
         {
-            if (a.Length <= 1) throw new Exception("invalid a");
-            int gap = a.Length;
-            int value = 0;
-            int index = 0;
-            int length = a.Length;
-            while (true)
+            if (a?.Length < 1) throw new Exception("invalid a");
+            for (int gap = a.Length / 2; gap > 0; gap /= 2)
             {
-                gap = Convert.ToInt32(Math.Ceiling((double)gap / 2));
-
-                for (int i = 0; i < a.Length; i++) //分组之后，不同组中相同的数的相对位置可能发生改变，因此为不稳定的排序 
+                //从笫gap个元素,逐个对其所在的组进行直接插入排序
+                for (int i = gap; i < a.Length; i++)
                 {
-                    index = i;
-                    value = a[i];
-                    while (index - gap >= 0 && value < a[index - gap])
+                    int j = i;
+                    int temp = a[j];
+                    if (a[j] < a[j - gap])
                     {
-                        a[index] = a[index - gap];
-                        index = index - gap;
+                        while (j - gap >= 0 & temp < a[j - gap])
+                        {
+                            //移动
+                            a[j] = a[j - gap];
+                            j -= gap;
+                        }
+                        //当退出while后,就给temp找到插入的位置
+                        a[j] = temp;
                     }
-                    a[index] = value;
                 }
 
-                if (gap == 1) break;
             }
-        }
-
-        static void shellSort(int[] a)
-        {
-            int gap = a.Length;
-            int value = 0;
-            int index = 0;
-            int x = 0;
-            while (true)
-            {
-                gap = Convert.ToInt32(Math.Ceiling((double)gap / 2));
-
-                for (int i = 0; i < a.Length; i++)
-                {
-                    index = i;
-                    value = a[i];
-                    while (index - gap >= 0 && value < a[index - gap])
-                    {
-                        a[index] = a[index - gap];
-                        index = index - gap;
-                    }
-                    a[index] = value;
-                    x++;
-                }
-                if (gap == 1) break;
-            }
-            Console.WriteLine(x);
         }
     }
 }
