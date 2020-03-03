@@ -12,7 +12,7 @@ namespace ShellSort
             int[] a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 2, 2, 4, 5, 4, 2 };
             a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
             ShellSort(a);
-            //Console.WriteLine(string.Join(',', a));
+            Console.WriteLine(string.Join(',', a));
             Console.ReadLine();
         }
 
