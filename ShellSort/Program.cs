@@ -10,7 +10,7 @@ namespace ShellSort
         static void Main(string[] args)
         {
             int[] a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 2, 2, 4, 5, 4, 2 };
-            a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
+            //a = new int[] { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
             ShellSort(a);
             Console.WriteLine(string.Join(',', a));
             Console.ReadLine();
@@ -39,7 +39,7 @@ namespace ShellSort
                             a[j + gap] = temp;
                             //Console.WriteLine(gap.ToString() + " -- " + string.Join(',', a) + " -- i = " + i.ToString() + " j = " + j.ToString());
                         }
-                        Console.WriteLine(gap.ToString() + " -- i = " + i.ToString() + " j = " + j.ToString());
+                        //Console.WriteLine(gap.ToString() + " -- i = " + i.ToString() + " j = " + j.ToString());
                     }
                 }
             }
@@ -59,17 +59,14 @@ namespace ShellSort
                 {
                     int j = i;
                     int temp = a[j];
-                    if (a[j] < a[j - gap])
+                    while (j - gap >= 0 & temp < a[j - gap])
                     {
-                        while (j - gap >= 0 & temp < a[j - gap])
-                        {
-                            //移动
-                            a[j] = a[j - gap];
-                            j -= gap;
-                        }
-                        //当退出while后,就给temp找到插入的位置
-                        a[j] = temp;
+                        //移动
+                        a[j] = a[j - gap];
+                        j -= gap;
                     }
+                    //当退出while后,就给temp找到插入的位置
+                    a[j] = temp;
                 }
 
             }
