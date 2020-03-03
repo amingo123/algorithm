@@ -46,7 +46,7 @@ namespace ShellSort
         }
 
         /// <summary>
-        /// 基于移动法
+        /// 基于移动法(插入法)
         /// </summary>
         /// <param name="a"></param>
         static void ShellSort1(int[] a)
