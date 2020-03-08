@@ -7,10 +7,10 @@ namespace GroupedDictionary
 {
     public class GroupedDictionary:Dictionary<GroupEntry,int>
     {
-        public GroupedDictionary GetByGroupId(int GroupId)
+        public GroupedDictionary GetByGroupId(GroupEntry ge)
         {
             var d = new GroupedDictionary();
-            var a = this.Where(t => t.Key.GroupId == GroupId);
+            var a = this.Where(t => t.Key == ge);
             //foreach (var item in a)
             //{
             //    d.Add(item.Key, item.Value);
@@ -26,6 +26,8 @@ namespace GroupedDictionary
 
         public override bool Equals(object obj)
         {
+            return false;
+
             if (obj is GroupEntry ge)
             {
                 //Console.WriteLine("Equals " + ge.GroupId);
@@ -47,6 +49,7 @@ namespace GroupedDictionary
         public override int GetHashCode()
         {
             //Console.WriteLine("GetHashCode " + GroupId);
+            //return Guid.NewGuid().GetHashCode();
             return GroupId.GetHashCode();
         }
     }

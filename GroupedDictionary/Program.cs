@@ -23,36 +23,36 @@ namespace GroupedDictionary
             Console.WriteLine("---------------------------------------------------");
             Stopwatch sw = new Stopwatch();
             sw.Start();
-            GroupedDictionary b = a.GetByGroupId(1);
+            GroupedDictionary b = a.GetByGroupId(new GroupEntry { GroupId = 1, SomeValue =1 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
 
             sw.Start();
             a.ContainsKey(new GroupEntry { GroupId = -1, SomeValue = -1 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
             sw.Start();
             a.ContainsKey(new GroupEntry { GroupId = 1 , SomeValue = 1 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
             sw.Start();
             a.ContainsKey(new GroupEntry { GroupId = 1, SomeValue = 1999 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
 
             sw.Start();
             a.ContainsKey(new GroupEntry { GroupId = 499, SomeValue = 1999 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
 
             sw.Start();
             a.ContainsKey(new GroupEntry { GroupId = 499, SomeValue = 1 });
             sw.Stop();
-            Console.WriteLine(sw.ElapsedTicks);
+            Console.WriteLine(sw.ElapsedMilliseconds);
             Console.Read();
         }
     }
