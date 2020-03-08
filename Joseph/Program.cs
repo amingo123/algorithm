@@ -7,12 +7,10 @@ namespace Joseph
     {
         static void Main(string[] args)
         {
-            //Joseph_LinkedList j = new Joseph_LinkedList();
-            //j.Init(125);
-            //j.Count(10, 20);
+            Joseph_LinkedList j = new Joseph_LinkedList();
+            j.Init(125);
+            j.Count(10, 20);
             //j.ToString();
-            Joseph_Array ja = new Joseph_Array();
-            ja.ToString();
 
             Console.ReadLine();
         }

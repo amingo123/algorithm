@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortParallel", "SortParalle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerofTwo", "PowerofTwo\PowerofTwo.csproj", "{FC6BBF9D-B6F6-4CEF-9DFE-D1D97A45CB29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupedDictionary", "GroupedDictionary\GroupedDictionary.csproj", "{3B06FD3B-7E08-4660-AFE3-D2975F283558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{FC6BBF9D-B6F6-4CEF-9DFE-D1D97A45CB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6BBF9D-B6F6-4CEF-9DFE-D1D97A45CB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6BBF9D-B6F6-4CEF-9DFE-D1D97A45CB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B06FD3B-7E08-4660-AFE3-D2975F283558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B06FD3B-7E08-4660-AFE3-D2975F283558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B06FD3B-7E08-4660-AFE3-D2975F283558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B06FD3B-7E08-4660-AFE3-D2975F283558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
