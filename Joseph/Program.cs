@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Joseph
 {
@@ -6,16 +7,19 @@ namespace Joseph
     {
         static void Main(string[] args)
         {
-            Joseph j = new Joseph();
-            j.Init(125);
-            j.Count(10, 20);
+            //Joseph_LinkedList j = new Joseph_LinkedList();
+            //j.Init(125);
+            //j.Count(10, 20);
             //j.ToString();
+            Joseph_Array ja = new Joseph_Array();
+            ja.ToString();
+
             Console.ReadLine();
         }
     }
 
 
-    public class Joseph
+    public class Joseph_LinkedList
     {
         public Boy first;
         public int Num;
@@ -34,13 +38,17 @@ namespace Joseph
                 if (i == 1)
                 {
                     first = b;
-                    first.next = first;
                     temp = first;
+                }
+                else if (i == num)
+                {
+                    temp.next = b;
+                    b.next = first;
+                    temp = null;
                 }
                 else
                 {
                     temp.next = b;
-                    b.next = first;
                     temp = b;
                 }
             }
@@ -49,12 +57,6 @@ namespace Joseph
         public override string ToString()
         {
             Boy temp = first;
-            //while (first != temp.next)
-            //{
-            //    temp.ToString();
-            //    temp = temp.next;
-            //}
-            //temp.ToString();
 
             while (true)
             {
@@ -83,14 +85,15 @@ namespace Joseph
                 temp = temp.next;
             }
 
-            for (int i = 1; i < start; i++)
+            for (int i = 1; i < start; i++)//move both temp and first, so first point to the starter temp point to the previous of the starter
             {
                 temp = temp.next;
                 first = first.next;
             }
 
-            while (first != first.next)
+            while (first != first.next)//only one boy left
             {
+                //move both temp and first, so temp point to the previous of the deleted boy
                 for (int i = 1; i < interval; i++)
                 {
                     first = first.next;
@@ -102,7 +105,14 @@ namespace Joseph
             }
             first.ToString();
         }
+
+        int f(int n, int m)
+        {
+            return n == 1 ? n : (f(n - 1, m) + m - 1) % n + 1;
+        }
     }
+
+    
 
     public class Boy
     {
