@@ -1,22 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
+
+public class MyObject
+{
+    public int Key { get; set; }
+    public int Value { get; set; }
+}
+
 
 public class SegmentTree
 {
+    // array size 
+    readonly int n; 
     // limit for array size 
-    static readonly int N = 100000;
-
-    static int n; // array size 
-
+    readonly int N;
     // Max size of tree 
-    static readonly int[] tree = new int[2 * N];
+    readonly long[] tree;
+    readonly List<MyObject> list;
+
+    public SegmentTree(List<MyObject> list)
+    {
+        n = list.Count;
+        N = 2 * n;
+        tree = new long[N];
+        this.list = list;
+    }
 
     // function to build the tree 
-    static void Build(int[] arr)
+    public void Build()
     {
         // insert leaf nodes in tree 
         for (int i = 0; i < n; i++)
         {
-            tree[n + i] = arr[i];
+            tree[n + i] = list[i].Value;
         }
 
         // build the tree by calculating 
@@ -28,10 +46,10 @@ public class SegmentTree
     }
 
     // function to update a tree node 
-    static void UpdateTreeNode(int p, int value)
+    public void UpdateTreeNode(int p, MyObject myobj)
     {
         // set value at position p 
-        tree[p + n] = value;
+        tree[p + n] = myobj.Value;
         p += n;
 
         // move upward and update parents 
@@ -43,9 +61,9 @@ public class SegmentTree
 
     // function to get sum on 
     // interval [l, r) 
-    static int Query(int l, int r)
+    public long Query(int l, int r)
     {
-        int res = 0;
+        long res = 0;
         // loop to find the sum in the range 
         for (l += n, r += n; l < r; l >>= 1, r >>= 1)
         {
@@ -55,31 +73,59 @@ public class SegmentTree
             if ((r & 1) > 0)
                 res += tree[--r];
         }
-
         return res;
-    }
+    }    
+}
 
+public class _test
+{
     // driver program to test the 
     // above function  
     static public void Main()
     {
-        int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+        List<MyObject> list = new List<MyObject>();
+        int n = 99000000;
+        for (int i = 0; i < n; i++)
+        {
+            list.Add(new MyObject() { Value = i, Key = i });
+        }
 
-        // n is global 
-        n = a.Length;
-
-        // build tree  
-        Build(a);
+        SegmentTree st = new SegmentTree(list);
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+        st.Build();
+        sw.Stop();        
+        Console.WriteLine($"Build {sw.ElapsedMilliseconds}");        
 
         // print the sum in range(1,2) 
         // index-based 
-        Console.WriteLine(Query(1, 3));
+        int start = 4567898;
+        int end = 40003000;
+        if (start > n || end > n || start > end)
+        {
+            Console.WriteLine("exception"); return;
+        }
+        sw.Reset();
+        sw.Start();
+        var sum = st.Query(start, end);
+        sw.Stop();        
+        Console.WriteLine($"Query {sw.ElapsedMilliseconds} Reuslt:{sum}");
 
+        sum = 0;
+        sw.Reset();
+        sw.Start();
+        for (int i = start; i < end; i++)
+        {
+            sum += list[i].Value;
+        }
+        sw.Stop();        
+        Console.WriteLine($"Query {sw.ElapsedMilliseconds} Reuslt:{sum}");
+
+        sw.Reset();
+        sw.Start();
         // modify element at 2nd index 
-        UpdateTreeNode(2, 1);
-
-        // print the sum in range(1,2) 
-        // index-based 
-        Console.WriteLine(Query(1, 3));
+        st.UpdateTreeNode(4, new MyObject() {  Key = 77,Value = 77 });
+        sw.Stop();
+        Console.WriteLine($"UpdateTreeNode {sw.ElapsedMilliseconds}");
     }
 }
