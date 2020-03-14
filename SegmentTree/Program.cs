@@ -95,31 +95,37 @@ public class _test
         sw.Start();
         st.Build();
         sw.Stop();        
-        Console.WriteLine($"Build {sw.ElapsedMilliseconds}");        
+        Console.WriteLine($"Build {sw.ElapsedMilliseconds}");
 
         // print the sum in range(1,2) 
         // index-based 
-        int start = 4567898;
-        int end = 40003000;
+        int start = n/1321;
+        int end = n/5;
         if (start > n || end > n || start > end)
         {
             Console.WriteLine("exception"); return;
         }
         sw.Reset();
         sw.Start();
+        DateTime t1 = DateTime.Now;
         var sum = st.Query(start, end);
-        sw.Stop();        
+        DateTime t2 = DateTime.Now;
+        sw.Stop();
         Console.WriteLine($"Query {sw.ElapsedMilliseconds} Reuslt:{sum}");
+        Console.WriteLine($"Query {(t2.Ticks - t1.Ticks) / 100}ns Reuslt:{sum}");
 
         sum = 0;
         sw.Reset();
         sw.Start();
+        t1 = DateTime.Now;
         for (int i = start; i < end; i++)
         {
             sum += list[i].Value;
         }
-        sw.Stop();        
-        Console.WriteLine($"Query {sw.ElapsedMilliseconds} Reuslt:{sum}");
+        t2 = DateTime.Now;
+        sw.Stop();
+        Console.WriteLine($"for {sw.ElapsedMilliseconds} Reuslt:{sum}");
+        Console.WriteLine($"for {(t2.Ticks - t1.Ticks) / 100}ns Reuslt:{sum}");
 
         sw.Reset();
         sw.Start();
